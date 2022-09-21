@@ -1,0 +1,19 @@
+<mat-toolbar>
+    <h1 class="title">myLC</h1>
+    <div style="display: flex; align-items: center">
+        <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="light_mode"></mat-icon>
+        </button>
+        <div *ngIf="auth.user$ | async as user; else login">
+            <button mat-raised-button color="accent" aria-label="Example icon button with a menu icon" (click)="auth.signOut()">
+                LOGOUT
+            </button>
+        </div>
+        <ng-template #login>
+            <button mat-raised-button color="accent" aria-label="Example icon button with a menu icon" (click)="auth.googleSignIn()">
+                LOGIN
+            </button>
+        </ng-template>
+    </div>
+
+</mat-toolbar>

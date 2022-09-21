@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { problems, categoryOrdering } from './problems';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'mylc-frontend';
+  constructor() {}
+  problems = problems
+  categoryOrdering = categoryOrdering
 }

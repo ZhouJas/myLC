@@ -1,0 +1,4 @@
+mylc-frontend/firebase.json
+mylc-frontend/.firebaserc
+mylc-frontend/src/environments/environment.prod.ts
+mylc-frontend/src/environments/environment.ts

@@ -1,0 +1,26 @@
+
+<cdk-accordion class="example-accordion">
+    <cdk-accordion-item
+    class="example-accordion-item"
+    #accordionItem="cdkAccordionItem"
+    role="button"
+    tabindex="0"
+    [attr.aria-expanded]="accordionItem.expanded"
+    [attr.aria-controls]="'accordion-body-' + category"
+    (click)="toggle()"
+    >
+    <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+        <h2>{{category}}</h2>
+    </div>
+    <div
+      class="example-accordion-item-body"
+      role="region"
+      [style.overflow]=" 'hidden'"
+      [attr.id]="'accordion-body-' + category"
+      [attr.aria-labelledby]="'accordion-header-' + category"
+      [@expanded]="accordionItem.expanded"
+      >
+      <app-problem-list [problems]="problems" [category]="category"></app-problem-list>
+    </div>
+  </cdk-accordion-item>
+</cdk-accordion>
