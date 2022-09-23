@@ -9,7 +9,7 @@ import {
   trigger
 } from '@angular/animations';
 
-const DEFAULT_DURATION = 300;
+const DEFAULT_DURATION = 500;
 
 @Component({
   selector: 'app-category-container',
@@ -17,8 +17,8 @@ const DEFAULT_DURATION = 300;
   styleUrls: ['./category-container.component.scss'],
   animations: [
     trigger('expanded', [
-      state('true', style({ maxHeight: '6000px'})),
-      state('false', style({ maxHeight: '0'})),
+      state('true', style({})),
+      state('false', style({ height: '0px'})),
       transition('true => false', animate(DEFAULT_DURATION + 'ms ease-out')),
       transition('false => true', animate(DEFAULT_DURATION + 'ms ease-in'))
     ])
