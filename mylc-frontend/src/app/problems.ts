@@ -41,7 +41,7 @@ const arrayHashing: Problem[] = [
     {
         title: "Encode and Decode Strings",
         difficulty: Hardness.Medium,
-        link: "https://www.lintcode.com/problem/659/"
+        link: "https://leetcode.com/problems/encode-and-decode-strings/"
     },
 
     {
