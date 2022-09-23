@@ -17,7 +17,7 @@ const DEFAULT_DURATION = 300;
   styleUrls: ['./category-container.component.scss'],
   animations: [
     trigger('expanded', [
-      state('true', style({ maxHeight: '500px'})),
+      state('true', style({ maxHeight: '6000px'})),
       state('false', style({ maxHeight: '0'})),
       transition('true => false', animate(DEFAULT_DURATION + 'ms ease-out')),
       transition('false => true', animate(DEFAULT_DURATION + 'ms ease-in'))

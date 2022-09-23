@@ -8,7 +8,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProblemListComponent } from './components/problem-list/problem-list.component';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { ProblemListItemComponent } from './components/problem-list-item/problem-list-item.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -29,7 +28,6 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
     AppComponent,
     HeaderComponent,
     ProblemListComponent,
-    ProblemListItemComponent,
     CategoryContainerComponent,
   ],
   imports: [

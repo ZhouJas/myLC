@@ -1,7 +1,6 @@
 
-<cdk-accordion class="example-accordion">
+<cdk-accordion>
     <cdk-accordion-item
-    class="example-accordion-item"
     #accordionItem="cdkAccordionItem"
     role="button"
     tabindex="0"
@@ -13,9 +12,8 @@
         <h2>{{category}}</h2>
     </div>
     <div
-      class="example-accordion-item-body"
       role="region"
-      [style.overflow]=" 'hidden'"
+      [style.overflow]="'hidden'"
       [attr.id]="'accordion-body-' + category"
       [attr.aria-labelledby]="'accordion-header-' + category"
       [@expanded]="accordionItem.expanded"
