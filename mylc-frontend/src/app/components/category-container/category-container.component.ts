@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Problem } from 'src/app/Problem';
 import {
-  AUTO_STYLE,
   animate,
   state,
   style,
@@ -9,7 +8,7 @@ import {
   trigger
 } from '@angular/animations';
 
-const DEFAULT_DURATION = 500;
+const DEFAULT_DURATION = 400;
 
 @Component({
   selector: 'app-category-container',
@@ -19,8 +18,8 @@ const DEFAULT_DURATION = 500;
     trigger('expanded', [
       state('true', style({})),
       state('false', style({ height: '0px'})),
-      transition('true => false', animate(DEFAULT_DURATION + 'ms ease-out')),
-      transition('false => true', animate(DEFAULT_DURATION + 'ms ease-in'))
+      transition('true => false', animate(DEFAULT_DURATION + 'ms ease-in-out')),
+      transition('false => true', animate(DEFAULT_DURATION + 'ms ease-in-out'))
     ])
   ]
 })

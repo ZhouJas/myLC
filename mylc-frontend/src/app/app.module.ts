@@ -21,6 +21,7 @@ import { CategoryContainerComponent } from './components/category-container/cate
 import {MatTableModule} from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox'
 import {CdkAccordionModule} from '@angular/cdk/accordion';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
     MatTableModule,
     MatCheckboxModule,
     CdkAccordionModule,
+    MatTooltipModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

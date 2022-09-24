@@ -100,7 +100,7 @@ $dark-bg-alpha-12:    rgba(#232323, 0.12);
 $mat-light-theme-background: (
   background:               $light-background,
   status-bar:               $light-bg-darker-20,
-  app-bar:                  $light-bg-darker-5,
+  app-bar:                  $light-text,
   hover:                    $dark-bg-alpha-4,
   card:                     $light-bg-lighter-5,
   dialog:                   $light-bg-lighter-5,
@@ -179,12 +179,12 @@ body {
   --text-accent-darker-color: #{$light-primary-text};
 }   
 $mat-accent: (
-  main: #939393,
+  main: #288eee,
   lighter: #dfdfdf,
   darker: #767676,
   200: #939393, // For slide toggle,
   contrast : (
-    main: $dark-primary-text,
+    main: $light-primary-text,
     lighter: $dark-primary-text,
     darker: $light-primary-text,
   )
@@ -259,4 +259,8 @@ $altTheme: (
   .mat-badge-content {
     font-family: 'Mulish';
   }
+}
+
+body { 
+  transition: all 200ms linear;
 }
