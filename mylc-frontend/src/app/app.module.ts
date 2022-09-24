@@ -22,6 +22,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox'
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     HeaderComponent,
     ProblemListComponent,
     CategoryContainerComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,14 @@
 <body class="mat-typography mat-app-background">
-    <app-header [isDark]="isDark" (modeSwitch)="modeSwitch()"></app-header>
-    <div *ngIf="auth.user$ | async as user; else notLoggedIn">
-      <h1 class="welcome">Welcome, {{user.displayName}}</h1>
-    </div>
-    <ng-template #notLoggedIn>
-      <h1 style="justify-content: center;
+  <app-header [isDark]="isDark" (modeSwitch)="modeSwitch()"></app-header>
+  <div *ngIf="auth.user$ | async as user; else notLoggedIn">
+    <h1 class="welcome">Welcome, {{user.displayName}}</h1>
+  </div>
+  <ng-template #notLoggedIn>
+    <h1 style="justify-content: center;
   text-align: center; margin:10px 0px;">Welcome</h1>
-    </ng-template>
+  </ng-template>
 
-    <app-category-container *ngFor="let category of categoryOrdering" [problems]="problems.get(category) || []"
-      [category]="category"></app-category-container>
+  <app-category-container *ngFor="let category of categoryOrdering" [problems]="problems.get(category) || []"
+    [category]="category"></app-category-container>
+  <app-footer></app-footer>
 </body>
