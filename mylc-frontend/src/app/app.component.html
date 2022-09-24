@@ -4,8 +4,7 @@
     <h1 class="welcome">Welcome, {{user.displayName}}</h1>
   </div>
   <ng-template #notLoggedIn>
-    <h1 style="justify-content: center;
-  text-align: center; margin:10px 0px;">Welcome</h1>
+    <h1 class="welcome">Welcome</h1>
   </ng-template>
 
   <app-category-container *ngFor="let category of categoryOrdering" [problems]="problems.get(category) || []"
