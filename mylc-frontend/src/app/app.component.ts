@@ -1,4 +1,6 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { Problem, RecType } from './Problem';
 import { problems, categoryOrdering } from './problems';
 import { AuthService } from './services/auth.service';
 import { Theme } from './Theme';
@@ -13,6 +15,8 @@ export class AppComponent implements OnInit{
   problems = problems
   categoryOrdering = categoryOrdering
   isDark = localStorage.getItem('selected-theme') ? localStorage.getItem('selected-theme') === Theme.Dark: true
+  recEvent: Subject<RecType> = new Subject<RecType>()
+  probEvent: Subject<Problem> = new Subject<Problem>()
   @HostBinding('class')
   get themeMode() {
     return this.isDark ? '': 'theme-alternate'
@@ -23,4 +27,12 @@ export class AppComponent implements OnInit{
     this.isDark = !this.isDark
     localStorage.setItem('selected-theme', this.isDark ? Theme.Dark: Theme.Light)
   }
+  emitRecSelection(event: RecType) {
+    this.recEvent.next(event)
+  }
+  emitProblemSelection(event: Problem) {
+    this.probEvent.next(event)
+  }
+  
+
 }

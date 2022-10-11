@@ -670,7 +670,7 @@ const bitmanip: Problem[] = [
 ]
 
 export const problems: Map<string, Problem[]>= new Map(
-    [    ["1-D Dynamic Programming", dp1d],
+    [["1-D Dynamic Programming", dp1d],
     ["2-D Dynamic Programming", dp2d],
     ["Advanced Graphs", advancedGraphs],
     ["Arrays & Hashing", arrayHashing],

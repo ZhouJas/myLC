@@ -18,7 +18,13 @@
       [attr.aria-labelledby]="'accordion-header-' + category"
       [@expanded]="accordionItem.expanded"
       >
-      <app-problem-list [problems]="problems" [category]="category"></app-problem-list>
+      <div *ngIf="this.isRec;else normal">
+        <app-recs-list (recSelectionEvent)="recSelectionEmit($event)" [probSelectionEvent]="probSelection"></app-recs-list>
+      </div>
+      <ng-template #normal>
+        <app-problem-list [problems]="problems" [category]="category" [recSelection]="recSelection" (problemSelectionEvent)="problemSelectionEmit($event)"></app-problem-list>
+      </ng-template>
+
     </div>
   </cdk-accordion-item>
 </cdk-accordion>

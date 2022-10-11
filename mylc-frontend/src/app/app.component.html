@@ -6,8 +6,10 @@
   <ng-template #notLoggedIn>
     <h1 class="welcome">Welcome</h1>
   </ng-template>
-
+  <app-category-container [category]="'Recommended'" (recSelectionEvent)="emitRecSelection($event)"
+    [probSelection]="probEvent"></app-category-container>
   <app-category-container *ngFor="let category of categoryOrdering" [problems]="problems.get(category) || []"
-    [category]="category"></app-category-container>
+    [category]="category" [recSelection]="recEvent" (problemSelectionEvent)="emitProblemSelection($event)">
+  </app-category-container>
   <app-footer></app-footer>
 </body>
