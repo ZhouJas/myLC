@@ -1,9 +1,16 @@
-h2 {
-    width: 80%;
-    padding: 10px 0px;
+mat-panel-title {
     justify-content: center;
-    text-align: center;
-    margin: auto;
-    border-style: solid;
-    border-radius: 3px;
+    font-size: 20px;
+}
+mat-expansion-panel {
+    align-items: center;
+    width: 80%;
+    margin:-3px 10%;
+    border: 3px solid;
+    padding: 5px 0;
+    border-collapse: collapse;
+}
+mat-expansion-panel-header {
+    padding:0;
+    text-align: center;    
 }

@@ -24,6 +24,7 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { FooterComponent } from './components/footer/footer.component';
 import { RecsListComponent } from './recs-list/recs-list.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { RecsListComponent } from './recs-list/recs-list.component';
     MatCheckboxModule,
     CdkAccordionModule,
     MatTooltipModule,
+    MatExpansionModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

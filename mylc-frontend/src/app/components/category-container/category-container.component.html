@@ -1,30 +1,15 @@
 
-<cdk-accordion>
-    <cdk-accordion-item
-    #accordionItem="cdkAccordionItem"
-    role="button"
-    tabindex="0"
-    [attr.aria-expanded]="accordionItem.expanded"
-    [attr.aria-controls]="'accordion-body-' + category"
-    (click)="toggle()"
-    >
-    <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
-        <h2>{{category}}</h2>
-    </div>
-    <div
-      role="region"
-      [style.overflow]="'hidden'"
-      [attr.id]="'accordion-body-' + category"
-      [attr.aria-labelledby]="'accordion-header-' + category"
-      [@expanded]="accordionItem.expanded"
-      >
+    <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+        <mat-panel-title>{{category}}</mat-panel-title>
+    </mat-expansion-panel-header>
+    
+    <div>
       <div *ngIf="this.isRec;else normal">
         <app-recs-list (recSelectionEvent)="recSelectionEmit($event)" [probSelectionEvent]="probSelection"></app-recs-list>
       </div>
       <ng-template #normal>
         <app-problem-list [problems]="problems" [category]="category" [recSelection]="recSelection" (problemSelectionEvent)="problemSelectionEmit($event)"></app-problem-list>
       </ng-template>
-
     </div>
-  </cdk-accordion-item>
-</cdk-accordion>
+  </mat-expansion-panel>
