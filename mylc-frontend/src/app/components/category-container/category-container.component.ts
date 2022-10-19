@@ -33,15 +33,10 @@ export class CategoryContainerComponent implements OnInit {
   @Output() problemSelectionEvent = new EventEmitter<Problem>()
   subscription: Subscription
   isRec: boolean
-  expanded = false
   constructor() { }
 
   ngOnInit(): void {
     this.isRec = this.category == "Recommended"
-  }
-
-  toggle() {
-    this.expanded = !this.expanded
   }
   recSelectionEmit(event: RecType) {
     this.recSelectionEvent.emit(event)

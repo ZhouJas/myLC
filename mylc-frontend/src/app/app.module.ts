@@ -25,6 +25,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { FooterComponent } from './components/footer/footer.component';
 import { RecsListComponent } from './recs-list/recs-list.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { DifficultyIndicatorComponent } from './difficulty-indicator/difficulty-indicator.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     CategoryContainerComponent,
     FooterComponent,
     RecsListComponent,
+    DifficultyIndicatorComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +53,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     CdkAccordionModule,
     MatTooltipModule,
     MatExpansionModule,
+    MatChipsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
