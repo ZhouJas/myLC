@@ -3,6 +3,7 @@ mat-panel-title {
     font-size: 20px;
     margin:0;
     padding: 10px 0;
+    transition: all 200ms linear;
 }
 mat-expansion-panel {
     align-items: center;
@@ -11,8 +12,10 @@ mat-expansion-panel {
     border: 3px solid;
     padding: 5px 0;
     border-collapse: collapse;
+    transition: all 200ms linear;
 }
 mat-expansion-panel-header {
     padding:0;
-    text-align: center;    
+    text-align: center;
+    
 }
