@@ -2,8 +2,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Problem, RecType } from 'src/app/Problem';
 import { Subscription, Observable } from 'rxjs';
 
-const DEFAULT_DURATION = 400;
-
 @Component({
   selector: 'app-category-container',
   templateUrl: './category-container.component.html',

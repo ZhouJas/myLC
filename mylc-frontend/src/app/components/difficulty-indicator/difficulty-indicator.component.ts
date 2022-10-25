@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Hardness } from '../Hardness';
+import { Hardness } from '../../Hardness';
 @Component({
   selector: 'app-difficulty-indicator',
   templateUrl: './difficulty-indicator.component.html',

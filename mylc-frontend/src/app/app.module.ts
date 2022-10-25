@@ -23,9 +23,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox'
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { FooterComponent } from './components/footer/footer.component';
-import { RecsListComponent } from './recs-list/recs-list.component';
+import { RecsListComponent } from './components/recs-list/recs-list.component';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { DifficultyIndicatorComponent } from './difficulty-indicator/difficulty-indicator.component';
+import { DifficultyIndicatorComponent } from './components/difficulty-indicator/difficulty-indicator.component';
 import {MatChipsModule} from '@angular/material/chips';
 
 
