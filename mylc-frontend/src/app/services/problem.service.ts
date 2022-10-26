@@ -49,23 +49,23 @@ export class ProblemService {
     const curTime = new Date()
     const curDate = new Date(Date.UTC(curTime.getUTCFullYear(), curTime.getUTCMonth(), curTime.getUTCDate()));
     if (localStorage.getItem('questionsOfTheDay')) {
-      let questionsOfTheDay = JSON.parse(localStorage.getItem('questionsOfTheDay') || '{}')
+      const questionsOfTheDay = JSON.parse(localStorage.getItem('questionsOfTheDay') || '{}')
       const creationTime = new Date(questionsOfTheDay['creationTime'])
       const creationDate = new Date(Date.UTC(creationTime.getUTCFullYear(), creationTime.getUTCMonth(), creationTime.getUTCDate()));
       if (curDate.valueOf() === creationDate.valueOf()) {
         return questionsOfTheDay.problems
       }
     }
-    let res = new Set()
+    let res = new Set<string>()
     while (res.size != 4) {
       const randomCategory = categoryOrdering[Math.floor(Math.random() * categoryOrdering.length)]
       const randomProblemList = problems.get(randomCategory) || []
       const randomProblem = randomProblemList[Math.floor(Math.random() * randomProblemList?.length)]
-      res.add({ problem: randomProblem, category: randomCategory })
+      res.add(JSON.stringify({ problem: randomProblem, category: randomCategory }))
     }
-    let questionsOfTheDay = JSON.stringify({ creationTime: curDate, problems: Array.from(res) })
-    localStorage.setItem('questionsOfTheDay', questionsOfTheDay)
-    return Array.from(res)
+    const parsedProblems = Array.from(res).map(x => JSON.parse(x))
+    localStorage.setItem('questionsOfTheDay', JSON.stringify({ creationTime: curDate, problems: parsedProblems }))
+    return parsedProblems
   }
 
 
