@@ -47,11 +47,11 @@ export class ProblemService {
   }
   generateRecommendations() {
     const curTime = new Date()
-    const curDate = new Date(Date.UTC(curTime.getUTCFullYear(), curTime.getUTCMonth(), curTime.getUTCDate()));
+    const curDate = new Date(curTime.getFullYear(), curTime.getMonth(), curTime.getDate());
     if (localStorage.getItem('questionsOfTheDay')) {
       const questionsOfTheDay = JSON.parse(localStorage.getItem('questionsOfTheDay') || '{}')
       const creationTime = new Date(questionsOfTheDay['creationTime'])
-      const creationDate = new Date(Date.UTC(creationTime.getUTCFullYear(), creationTime.getUTCMonth(), creationTime.getUTCDate()));
+      const creationDate = new Date(creationTime.getFullYear(), creationTime.getMonth(), creationTime.getDate());
       if (curDate.valueOf() === creationDate.valueOf()) {
         return questionsOfTheDay.problems
       }
