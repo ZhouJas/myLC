@@ -4,7 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
 import { ProblemService } from 'src/app/services/problem.service';
 import { AuthService } from 'src/app/services/auth.service';
-import { Observable, Subscription } from 'rxjs';
+import { mergeMap, Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-recs-list',
@@ -32,17 +32,15 @@ export class RecsListComponent implements OnInit {
       }
     })
     this.authService.user$.subscribe((user) => {
-      this.problemService.getCompletedProblems().subscribe(data => {
-        data.subscribe((actualData: any) => {
-          const completedProblems = user ? actualData.data() : actualData
-          for (let i = 0; i < this.problems.length; ++i) {
-            let completedProblemsInCategory = new Set(completedProblems[this.problems[i].category] || [])
-            if (completedProblemsInCategory.has(this.problems[i].problem.link)) {
-              this.selection.select(this.problems[i])
-              this.titleToCheckedState.set(this.problems[i].problem.link, true)
-            }
+      this.problemService.getCompletedProblems().pipe(mergeMap(data => data)).subscribe((actualData: any) => {
+        const completedProblems = user ? actualData.data() : actualData
+        for (let i = 0; i < this.problems.length; ++i) {
+          let completedProblemsInCategory = new Set(completedProblems[this.problems[i].category] || [])
+          if (completedProblemsInCategory.has(this.problems[i].problem.link)) {
+            this.selection.select(this.problems[i])
+            this.titleToCheckedState.set(this.problems[i].problem.link, true)
           }
-        })
+        }
       })
     })
   }

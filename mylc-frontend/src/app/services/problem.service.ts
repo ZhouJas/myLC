@@ -16,7 +16,9 @@ export class ProblemService {
       if (!this.user) {
         this.completedProblems = of(of(JSON.parse(localStorage.getItem('completed-problems') || '{}')))
       }
-      this.completedProblems = this.auth.getCompletedProblems(this.user)
+      else {
+        this.completedProblems = this.auth.getCompletedProblems(this.user)
+      }
     })
   }
   getCompletedProblems() {
